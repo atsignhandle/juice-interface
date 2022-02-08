@@ -274,7 +274,8 @@ export default function Create() {
           resetProjectForm()
           dispatch(editingProjectActions.resetState())
 
-          window.location.hash = '/p/' + editingProjectInfo.handle
+          window.location.hash =
+            '/p/' + editingProjectInfo.handle + '?new_deploy=true'
         },
       },
     )
@@ -726,9 +727,9 @@ export default function Create() {
           okText={
             userAddress
               ? signerNetwork
-                ? 'Deploy project on ' + signerNetwork
-                : 'Deploy project'
-              : 'Connect wallet to deploy'
+                ? t`Deploy project on ${signerNetwork}`
+                : t`Deploy project`
+              : t`Connect wallet to deploy`
           }
           onOk={deployProject}
           confirmLoading={loadingCreate}
@@ -740,9 +741,9 @@ export default function Create() {
 
         <Modal
           visible={confirmStartOverVisible}
-          okText="Start Over"
+          okText={t`Start Over`}
           okType="danger"
-          title="Are you sure you want to start over?"
+          title={t`Are you sure you want to start over?`}
           onOk={() => {
             resetProjectForm()
             dispatch(editingProjectActions.resetState())
@@ -750,7 +751,7 @@ export default function Create() {
           }}
           onCancel={() => setConfirmStartOverVisible(false)}
         >
-          This will erase of your all changes.
+          <Trans>This will erase of your all changes.</Trans>
         </Modal>
       </Row>
     </V1ProjectContext.Provider>
