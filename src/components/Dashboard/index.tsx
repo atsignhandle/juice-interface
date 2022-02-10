@@ -27,7 +27,7 @@ import { useLocation, useParams } from 'react-router-dom'
 import { getTerminalName, getTerminalVersion } from 'utils/v1/terminals'
 import useTerminalOfProject from 'hooks/v1/contractReader/TerminalOfProject'
 
-import FeedbackPromptModal from 'components/modals/FeedbackPromptModal'
+import FeedbackPromptModal from 'components/Project/modals/FeedbackPromptModal'
 
 import { padding } from 'constants/styles/padding'
 import { layouts } from 'constants/styles/layouts'
